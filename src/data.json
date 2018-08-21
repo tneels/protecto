@@ -1,0 +1,29 @@
+{
+	"title": "Gallery",
+	"artist": {
+		"name": "Florian Nicolle",
+		"gallery": "Smith Gallery"
+	},
+	"index": {
+		"list": {
+			"art1": {
+				"title" : "Hello",
+				"city" : "Paris",
+				"dates" : "May 27 - Jun 18",
+				"src" : "iverson.jpg"
+			},
+			"art2": {
+				"title" : "World",
+				"city" : "London",
+				"dates" : "Jun 21 - Jul 15",
+				"src" : "foot-us-2.jpg"
+			},
+			"art3": {
+				"title" : "Hello World",
+				"city" : "New York",
+				"dates" : "Jul 18 - Jul 31",
+				"src" : "portrait-2.jpg"
+			}
+		}
+	}
+}

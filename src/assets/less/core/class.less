@@ -1,0 +1,228 @@
+// FONT FAMILY
+.font-1{ font-family: sans-serif; .font-rendering}
+.wf-montserrat-n4-active.wf-montserrat-n7-active .font-1{ font-family: 'Montserrat', sans-serif;}
+.font-2 { font-family: sans-serif; } // MULI
+.wf-muli-n3-active.wf-muli-n4-active .font-2{ font-family: 'Muli', sans-serif;}
+
+// FONT-SIZE
+.fs0{font-size: 0;}
+// .fs12{font-size: 12px;}
+// .fs14{font-size: 14px;}
+// .fs16{font-size: 16px;}
+// .fs18{font-size: 18px;}
+// .fs20{font-size: 20px;}
+// .fs22{font-size: 22px;}
+// .fs24{font-size: 24px;}
+// .fs30{font-size: 30px;}
+
+
+@font-size-step: 2;
+@font-size-max: 30;
+@font-size-body: 16;
+.font-size-loop(@i) when (@i >= 12) {
+  .fs@{i} {     font-size: calc(~"@{i}em / @{font-size-body}"); }
+
+  .font-size-loop(@i - @font-size-step);
+}
+.font-size-loop (@font-size-max);
+
+
+
+
+// FONT UTILITIES
+.upper{text-transform: uppercase;}
+.font-rendering{ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+.under, .under:hover{text-decoration: underline;}
+.no-under, .no-under:hover{text-decoration: none;}
+.nowrap{white-space: nowrap;}
+
+// COLORS
+.primary{color: @brand-primary;}
+.gray{color: @gray;}
+.gray-font{color: @gray-dark;}
+
+
+// MARGIN
+// Generic
+.m-0{margin: 0;}
+
+@margin-padding-step: 5;
+@margin-padding-max: 60;
+.margin-padding-loop(@i) when (@i >= 0) {
+  .mt-@{i} {     margin-top: ~"@{i}px" !important; }
+  .mr-@{i} {   margin-right: ~"@{i}px" !important; }
+  .mb-@{i} {  margin-bottom: ~"@{i}px" !important; }
+  .ml-@{i} {    margin-left: ~"@{i}px" !important; }
+  .pt-@{i} {    padding-top: ~"@{i}px" !important; }
+  .pr-@{i} {  padding-right: ~"@{i}px" !important; }
+  .pb-@{i} { padding-bottom: ~"@{i}px" !important; }
+  .pl-@{i} {   padding-left: ~"@{i}px" !important; }
+  .margin-padding-loop(@i - @margin-padding-step);
+}
+.margin-padding-loop (@margin-padding-max);
+
+
+// POSITION
+.container{
+	width: 1250px;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.inlineB{display: inline-block; *display: inline; zoom: 1;}
+
+.VA-top{            .inlineB; vertical-align: top;}
+.VA-text-bottom{    .inlineB; vertical-align: text-bottom;}
+.VA-inherit{        .inlineB; vertical-align: inherit;}
+
+.zero-absolute(@width, @height){
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  margin: auto;
+  .size(@width, @height);
+}
+
+.cover{
+  position: absolute;
+  top: 50%; left: 50%;
+  margin: 0;
+  translate: -50%, -50%;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: none;
+}
+
+.no-translate .cover{
+  left: 0; top: 0;
+}
+
+.tablecss{
+  display: table;
+  width: 100%;
+  > *{
+    display: table-cell !important;
+
+  }
+  &.vertical-centering{
+    > *{
+      vertical-align: middle;
+    }
+  }
+}
+
+
+// USEFULL
+.block{display: block;}
+.relative{position: relative;}
+.hidden-xxs{@media (max-width: 480px){display: none !important;}}
+.full-width{width: 100% !important;}
+.no-border{border: 0 none !important;}
+
+.required{
+  &:after{
+    content: "*";
+    .primary;
+  }
+}
+
+
+// EXTRA EXTRA SMALL DEVICE
+@media screen and(max-width: 480px){
+  .col-xxs-1, .col-xxs-2, .col-xxs-3, .col-xxs-4, .col-xxs-5, .col-xxs-6, .col-xxs-7, .col-xxs-8, .col-xxs-9, .col-xxs-10, .col-xxs-11, .col-xxs-12 {
+    float: left;
+  }
+  .col-xxs-12 {width: 100%;}
+  .col-xxs-11 {width: 91.66666667%;}
+  .col-xxs-10 {width: 83.33333333%;}
+  .col-xxs-9  {width: 75%;}
+  .col-xxs-8  {width: 66.66666667%;}
+  .col-xxs-7  {width: 58.33333333%;}
+  .col-xxs-6  {width: 50%;}
+  .col-xxs-5  {width: 41.66666667%;}
+  .col-xxs-4  {width: 33.33333333%;}
+  .col-xxs-3  {width: 25%;}
+  .col-xxs-2  {width: 16.66666667%;}
+  .col-xxs-1  {width: 8.33333333%;}
+}
+
+// caret
+.caret-bottom(@size: 4px, @color){
+  display: inline-block;
+  .square(0);
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top:   @size dashed @color;
+  border-top:   @size solid @color;
+  border-right: @size solid transparent;
+  border-left:  @size solid transparent;
+}
+
+.caret-top(@size: 4px, @color){
+  display: inline-block;
+  .square(0);
+  margin-left: 2px;
+  vertical-align: middle;
+  border-bottom: @size dashed @color;
+  border-bottom: @size solid @color;
+  border-right:  @size solid transparent;
+  border-left:   @size solid transparent;
+}
+
+.caret-left(@size: 4px, @color){
+  display: inline-block;
+  .square(0);
+  vertical-align: middle;
+  border-right:   @size dashed @color;
+  border-right:   @size solid @color;
+  border-top:     @size solid transparent;
+  border-bottom:  @size solid transparent;
+}
+
+.caret-right(@size: 4px, @color){
+  display: inline-block;
+  .square(0);
+  vertical-align: middle;
+  border-left:    @size dashed @color;
+  border-left:    @size solid @color;
+  border-top:     @size solid transparent;
+  border-bottom:  @size solid transparent;
+}
+
+
+.bg-resize(@file) {
+  @media (orientation: landscape){
+    @media (max-width: @screen-xs-max) {
+      background-image: url("@{images}/@{file}-xs.jpg"); // 767px
+    }
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max){
+      background-image: url("@{images}/@{file}-sm.jpg"); // 991px
+    }
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max){
+      background-image: url("@{images}/@{file}-md.jpg"); // 1199px
+    }
+  }
+
+  @media (orientation: portrait){
+    @media (max-width: @screen-xs-max) {
+      background-image: url("@{images}/@{file}-xs-portrait.jpg"); // 767px
+    }
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max){
+      background-image: url("@{images}/@{file}-sm-portrait.jpg"); // 991px
+    }
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max){
+      background-image: url("@{images}/@{file}-md-portrait.jpg"); // 1199px
+    }
+  }
+
+  @media (min-width: @screen-lg-min){
+    background-image: url("@{images}/@{file}-lg-1x.jpg"); // 2560px
+
+    @media
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) {
+      background-image: url("@{images}/@{file}-lg-2x.jpg"); // 5120px
+    }
+  }
+}

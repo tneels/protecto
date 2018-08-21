@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% include 'head.twig' %}
+</head>
+
+<body>
+	{% include '../_sections/hero.twig' %}
+
+	<div class="content content-wrap">
+		{% block page %}{% endblock %}
+	</div>
+
+	{% include 'footer.twig' %}
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+	<script type="text/javascript" src="assets/js/scripts.js"></script>
+</body>
+</html>
