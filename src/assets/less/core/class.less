@@ -1,8 +1,31 @@
 // FONT FAMILY
-.font-1{ font-family: sans-serif; .font-rendering}
-.wf-montserrat-n4-active.wf-montserrat-n7-active .font-1{ font-family: 'Montserrat', sans-serif;}
-.font-2 { font-family: sans-serif; } // MULI
-.wf-muli-n3-active.wf-muli-n4-active .font-2{ font-family: 'Muli', sans-serif;}
+.montserrat,
+[class*="montserrat"]{ 
+  font-family: sans-serif;
+  .font-rendering;
+  &-300 {font-weight: 300;}
+  &-400 {font-weight: 400;}
+  &-400i {font-weight: 400; font-style: italic;}
+  &-700 {font-weight: 700;}
+}
+
+.wf-active {
+  [class*="montserrat"] { font-family: 'Montserrat', sans-serif;}
+}
+
+.muli,
+[class*="muli"]{ 
+  font-family: sans-serif;
+  .font-rendering;
+  &-400 {font-weight: 400;}
+  &-500 {font-weight: 500;}
+  &-600 {font-weight: 600;}
+  &-700 {font-weight: 700;}
+}
+
+.wf-active {
+  [class*="muli"] { font-family: 'Muli', sans-serif; }
+}
 
 // FONT-SIZE
 .fs0{font-size: 0;}

@@ -1,19 +1,29 @@
 <!DOCTYPE html>
-<html>
-<head>
-	{% include 'head.twig' %}
-</head>
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
 
-<body>
-	{% include '../_sections/hero.twig' %}
+{% include 'head.twig' %}
 
-	<div class="content content-wrap">
-		{% block page %}{% endblock %}
-	</div>
+<body id="top">
+	{% include 'header.twig' %}
+
+	{% include '../_sections/home.twig' %}
+	{% include '../_sections/about.twig' %}
+	{% include '../_sections/pricing.twig' %}
+	{% include '../_sections/testimonials.twig' %}
+	{% include '../_sections/download.twig' %}
 
 	{% include 'footer.twig' %}
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-	<script type="text/javascript" src="assets/js/scripts.js"></script>
+
+	<div id="preloader"> 
+    	<div id="loader"></div>
+    </div>
+
+    <script src="assets/js/jquery-2.1.3.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

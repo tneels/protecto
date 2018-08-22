@@ -135,18 +135,27 @@ gulp.task('critical', gulpsync.sync(['twig', 'css']), function (cb) {
 });
 
 gulp.task('js', () => {
-  return gulp.src([`${assets}/js/*.js`, `${assets}/js/**/*.js`])
+  return gulp.src(`${assets}/js/*.js`)
     .pipe(when(!argv.prod, sourcemaps.init()))
     .pipe(babel({
       presets: ['env']
     }))
     .pipe(when(argv.prod, uglify()))
-    .pipe(concat('scripts.js'))
     .pipe(when(!argv.prod, sourcemaps.write('.')))
     .pipe(when(argv.prod, rename({
       suffix: '.min'
     })))
     .pipe(gulp.dest(`${distAssets}/js`))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('jsVendor', () => {
+  return gulp.src(`${assets}/js/vendor/*.js`)
+    .pipe(uglify())
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest(`${distAssets}/js/vendor`))
     .pipe(browserSync.stream());
 });
 
@@ -193,7 +202,7 @@ gulp.task('ghPages', function () {
 });
 
 // Tâche "build" = toutes les tâches ensemble
-gulp.task('build', gulpsync.sync(['twig', ['css', 'js', 'img']]));
+gulp.task('build', gulpsync.sync(['twig', ['css', 'js', 'img', 'jsVendor']]));
 gulp.task('deploy', gulpsync.sync(['build', 'ghPages']));
 
 gulp.task('watch', () => {

@@ -1,0 +1,35 @@
+{# index.twig #}
+{% extends "_includes/layout.twig" %}
+
+{% block page %}
+	<div class="container">
+		<h1 class="font-1">{{ artist.name }}</h1>
+		<h2 class="font-2">{{ artist.gallery }}</h2>
+
+		<div class="Gallery">
+			<section class="Gallery-section Gallery-sectionLeft">
+				<div class="Gallery-sectionWrapper">
+					<div class="Gallery-slickNav">
+						{% for value in index.list %}
+							<div class="Gallery-infosWrapper">
+								<div class="Gallery-infos">
+						            <div class="Gallery-infos-title font-2">{{ value.title }}</div>
+						            <div class="Gallery-infos-city">{{ value.city }}</div>
+						            <div class="Gallery-infos-dates font-2">{{ value.dates }}</div>
+								</div>
+							</div>
+				        {% endfor %}
+					</div>
+				</div>
+			</section>
+
+			<section class="Gallery-section Gallery-sectionRight">
+				<div class="Gallery-slickFor">
+					{% for value in index.list %}
+			            <div class="Gallery-imgContainer"><img data-lazy="assets/uploads/{{ value.src }}"></div>
+			        {% endfor %}
+				</div>
+			</section>
+		</div>
+	</div>
+{% endblock %}
