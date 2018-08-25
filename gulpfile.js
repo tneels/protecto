@@ -137,9 +137,7 @@ gulp.task('critical', gulpsync.sync(['twig', 'css']), function (cb) {
 gulp.task('js', () => {
   return gulp.src(`${assets}/js/*.js`)
     .pipe(when(!argv.prod, sourcemaps.init()))
-    .pipe(babel({
-      presets: ['env']
-    }))
+
     .pipe(when(argv.prod, uglify()))
     .pipe(when(!argv.prod, sourcemaps.write('.')))
     .pipe(when(argv.prod, rename({
@@ -168,6 +166,13 @@ gulp.task('loadcss', () => {
     .pipe(rename({
       suffix: '.min'
     }))
+});
+
+
+// Tâche "img" = Images optimisées
+gulp.task('fonts', () => {
+  return gulp.src(`${source}/assets/fonts/icomoon/*`)
+    .pipe(gulp.dest(`${dist}/assets/fonts/icomoon`));
 });
 
 // Tâche "img" = Images optimisées
@@ -202,7 +207,7 @@ gulp.task('ghPages', function () {
 });
 
 // Tâche "build" = toutes les tâches ensemble
-gulp.task('build', gulpsync.sync(['twig', ['css', 'js', 'img', 'jsVendor']]));
+gulp.task('build', gulpsync.sync(['twig', ['css', 'js', 'img', 'jsVendor', 'fonts']]));
 gulp.task('deploy', gulpsync.sync(['build', 'ghPages']));
 
 gulp.task('watch', () => {
