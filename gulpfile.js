@@ -135,11 +135,12 @@ gulp.task('critical', gulpsync.sync(['twig', 'css']), function (cb) {
 });
 
 gulp.task('js', () => {
-  return gulp.src(`${assets}/js/*.js`)
+  return gulp.src([`${assets}/js/vendor/aos.js`, `${assets}/js/main.js`])
     .pipe(when(!argv.prod, sourcemaps.init()))
     .pipe(babel({
       presets: ['env']
     }))
+    .pipe(concat('main.js'))
     .pipe(when(argv.prod, uglify()))
     .pipe(when(!argv.prod, sourcemaps.write('.')))
     .pipe(when(argv.prod, rename({

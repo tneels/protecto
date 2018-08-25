@@ -2,9 +2,6 @@
  * Dazzle - Main JS
  *
  * ------------------------------------------------------------------- */
-
-import AOS from 'vendor/aos.js';
-
 (function ($) {
 
 	"use strict";
@@ -248,7 +245,7 @@ import AOS from 'vendor/aos.js';
 		ssSmoothScroll();
 		ssPlaceholder();
 		ssAlertBoxes();
-		ssAOS();
+		/*ssAOS();*/
 		ssBackToTop();
 
 		// to use the mailchimp form, uncomment the 
