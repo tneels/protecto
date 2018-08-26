@@ -171,18 +171,22 @@ gulp.task('loadcss', () => {
 
 // Tâche "img" = Images optimisées
 gulp.task('fonts', () => {
-  return gulp.src(`${source}/assets/fonts/icomoon/*`)
-    .pipe(gulp.dest(`${dist}/assets/fonts/icomoon`));
+  return gulp.src([
+    `${source}/assets/fonts/icomoon/*`, 
+    `${source}/assets/fonts/protecto/*`
+    ], {base: `${source}`})
+    .pipe(gulp.dest(`${dist}`));
 });
 
 // Tâche "img" = Images optimisées
 gulp.task('img', () => {
   return gulp.src([
-    `${source}/assets/img/1.Hero/*`,
-    `${source}/assets/img/2.About/*`,
-    `${source}/assets/img/3.Ecology/*`,
-    `${source}/assets/img/4.How/*`,
-    `${source}/assets/img/6.Team-word/*`,
+    `${source}/assets/img/Hero/*`,
+    `${source}/assets/img/About/*`,
+    `${source}/assets/img/Ecology/*`,
+    `${source}/assets/img/How/*`,
+    `${source}/assets/img/partners/*`,
+    `${source}/assets/img/Team-word/*`,
     `${source}/assets/img/*`,
   ],
     { base: `${source}` })
