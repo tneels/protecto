@@ -57,29 +57,29 @@ gulp.task('css', () => {
       browsers: ['last 2 versions'],
       cascade: false
     }))
-    .pipe(when(argv.prod, uncss({
-      html: [`${dist}/*.html`],
-      timeout: 1000,
-      ignore: [
-        /slick/,
-        /active/,
-        /next/,
-        /prev/,
-        /wf-/,
-        /Gallery/,
-        /icon/,
-        /container/,
-        /h/,
-        /row/,
-        /col/,
-        /float/,
-        /img/,
-        /footer/,
-        /content/,
-        /body/,
-        /html/
-      ],
-    })))
+    // .pipe(when(argv.prod, uncss({
+    //   html: [`${dist}/*.html`],
+    //   timeout: 1000,
+    //   ignore: [
+    //     /slick/,
+    //     /active/,
+    //     /next/,
+    //     /prev/,
+    //     /wf-/,
+    //     /Gallery/,
+    //     /icon/,
+    //     /container/,
+    //     /h/,
+    //     /row/,
+    //     /col/,
+    //     /float/,
+    //     /img/,
+    //     /footer/,
+    //     /content/,
+    //     /body/,
+    //     /html/
+    //   ],
+    // })))
     .pipe(when(argv.prod, nano()))
     // .pipe(plumber.stop())
     .pipe(rename({
@@ -173,7 +173,8 @@ gulp.task('loadcss', () => {
 gulp.task('fonts', () => {
   return gulp.src([
     `${source}/assets/fonts/icomoon/*`, 
-    `${source}/assets/fonts/protecto/*`
+    `${source}/assets/fonts/protecto/*`,
+    `${source}/assets/fonts/fa/*`
     ], {base: `${source}`})
     .pipe(gulp.dest(`${dist}`));
 });
