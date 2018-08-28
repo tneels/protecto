@@ -110,7 +110,6 @@ gulp.task('critical', gulpsync.sync(['twig', 'css']), function (cb) {
       // dest: dist + '/index-critical.html',
       inline: false,
       minify: true,
-      extract: true,
       css: [dist + '/assets/css/style.min.css'],
       ignore: ['@font-face', /url\(/],
       dimensions: [{
