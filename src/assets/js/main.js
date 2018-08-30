@@ -236,7 +236,7 @@
 		ssPreloader();
 		ssMobileMenu();
 		ssFitVids();
-		ssOwlCarousel();
+		// ssOwlCarousel();
 		ssWaypoints();
 		ssSmoothScroll();
 		ssPlaceholder();
