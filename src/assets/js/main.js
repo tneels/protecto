@@ -4,7 +4,7 @@
 
 	var cfg = {
 		scrollDuration: 800, // smoothscroll duration
-		mailChimpURL: 'https://facebook.us8.list-manage.com/subscribe/post?u=cdb7b577e41181934ed6a6a44&amp;id=e6957d85dc'  // mailchimp url
+		mailChimpURL: 'https://protectonnect.us19.list-manage.com/subscribe/post?u=fcabbd03c1bfcb9ea69e130d2&amp;id=174886cda0'  // mailchimp url
 	},
 
 		$WIN = $(window);
