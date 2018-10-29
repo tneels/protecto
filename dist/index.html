@@ -6,18 +6,21 @@
 <!--<![endif]-->
 
 <head>
-    
+    <!--- basic page needs
+   ================================================== -->
     <meta charset="utf-8">
     <title>Protectonnect</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
-    
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- mobile specific metas
+   ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 
-    
+    <!-- script
+   ================================================== -->
     <script src="assets/js/vendor/modernizr.js"></script>
     <script src="assets/js/vendor/pace.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -31,7 +34,7 @@
 			});
 		</script>
 
-		<link rel="stylesheet" href="assets/css/critical.min.css"> 
+		<link rel="stylesheet" href="assets/css/critical.min.css"> <!-- Load css above the fold -->
 
 		<link rel="preload" href="assets/css/style.min.css" as="style" onload="this.rel='stylesheet'">
 		<noscript><link rel="stylesheet" href="assets/css/style.min.css"></noscript>
@@ -40,7 +43,7 @@
 		!function(e){"use strict";var t=function(t,n,r){function o(e){return i.body?e():void setTimeout(function(){o(e)})}function a(){d.addEventListener&&d.removeEventListener("load",a),d.media=r||"all"}var l,i=e.document,d=i.createElement("link");if(n)l=n;else{var s=(i.body||i.getElementsByTagName("head")[0]).childNodes;l=s[s.length-1]}var u=i.styleSheets;d.rel="stylesheet",d.href=t,d.media="only x",o(function(){l.parentNode.insertBefore(d,n?l:l.nextSibling)});var f=function(e){for(var t=d.href,n=u.length;n--;)if(u[n].href===t)return e();setTimeout(function(){f(e)})};return d.addEventListener&&d.addEventListener("load",a),d.onloadcssdefined=f,f(a),d};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this),function(e){if(e.loadCSS){var t=loadCSS.relpreload={};if(t.support=function(){try{return e.document.createElement("link").relList.supports("preload")}catch(e){return!1}},t.poly=function(){for(var t=e.document.getElementsByTagName("link"),n=0;n<t.length;n++){var r=t[n];"preload"===r.rel&&"style"===r.getAttribute("as")&&(e.loadCSS(r.href,r),r.rel=null)}},!t.support()){t.poly();var n=e.setInterval(t.poly,300);e.addEventListener&&e.addEventListener("load",function(){e.clearInterval(n)}),e.attachEvent&&e.attachEvent("onload",function(){e.clearInterval(n)})}}}(this);
 		</script>
 
-
+<!-- 		<link rel="stylesheet" href="assets/css/style.min.css"> -->
 
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -50,7 +53,8 @@
 
 
 <body id="top">
-	
+	<!-- header 
+================================================== -->
 <header id="header" class="row">   
 
 	<div class="header-logo">
@@ -59,20 +63,21 @@
 
 	<nav id="header-nav-wrap">
 		<ul class="header-main-nav">
-			<li class="current"><a class="smoothscroll" href="#home" title="home">Home</a></li>
-			<li><a class="smoothscroll" href="#about" title="about">About</a></li>
-			<li><a class="smoothscroll" href="#how" title="how it works">How it works</a></li>
-			<li><a class="smoothscroll" href="#partners" title="our partners">Our partners</a></li>
-			<li><a class="smoothscroll" href="#footer" title="Let's keep in touch">Let's keep in touch</a></li>	
+			<li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
+			<li><a class="smoothscroll"  href="#about" title="about">About</a></li>
+			<li><a class="smoothscroll"  href="#how" title="how it works">How it works</a></li>
+			<li><a class="smoothscroll"  href="#partners" title="our partners">Our partners</a></li>
+			<li><a class="smoothscroll"  href="#footer" title="Let's keep in touch">Let's keep in touch</a></li>	
 		</ul>
 	</nav>
 
 	<a class="header-menu-toggle" href="#"><span>Menu</span></a>    	
 
-</header> 
+</header> <!-- /header -->
 
-	
-   <section id="home" data-parallax="scroll" data-image-src="assets/img/Hero/Hero_image.jpg" data-natural-width="3000" data-natural-height="2000">
+	<!-- home
+   ================================================== -->
+   <section id="home" data-parallax="scroll" data-image-src="assets/img/Hero/Hero_image.jpg" data-natural-width=3000 data-natural-height=2000>
 
         <div class="overlay"></div>
         <div class="home-content">        
@@ -101,13 +106,14 @@
 
                 </div>
 
-                <div class="home-image-right">                    
+                <div class="home-image-right">
                     <img src="assets/img/Hero/Pdt_off.png">
                     <img src="assets/img/Hero/Pdt_on.png">
+                    <img class="ces-award" src="assets/img/Hero/2019-Innovation-Awards-Honoree-Logo.png"/>
                 </div>
             </div>
 
-        </div> 
+        </div> <!-- end home-content -->
 
         <ul class="home-social-list">
             <li>
@@ -117,7 +123,7 @@
                 <a href="https://www.linkedin.com/company/protectonnect/" target="_blank"><i class="fa fa-linkedin"></i></a>
             </li>
         </ul>
-        
+        <!-- end home-social-list -->
 
         <div class="home-scrolldown">
             <a href="#about" class="scroll-icon smoothscroll">
@@ -126,10 +132,11 @@
             </a>
         </div>
 
-    </section>   
+    </section> <!-- end home -->  
 
 
-	
+	<!-- about
+================================================== -->
 <section id="about">
 
     <div class="row about-intro">
@@ -164,7 +171,7 @@
                     
                 </div> 	         	 
 
-                </div> 
+                </div> <!-- /bgrid -->
 
                 <div class="bgrid feature" data-aos="fade-up">	
 
@@ -181,7 +188,7 @@
                     
                 </div>	                          
 
-            </div> 
+            </div> <!-- /bgrid -->
 
             <div class="bgrid feature" data-aos="fade-up">
 
@@ -200,7 +207,7 @@
                         
                 </div> 	            	               
 
-            </div> 
+            </div> <!-- /bgrid -->
 
                 <div class="bgrid feature" data-aos="fade-up">
 
@@ -214,7 +221,7 @@
                     
                 </div>                
 
-                </div> 
+                </div> <!-- /bgrid -->
 
             <div class="bgrid feature" data-aos="fade-up">
 
@@ -227,7 +234,7 @@
                     </p>                            
                 </div>	               
 
-            </div> 
+            </div> <!-- /bgrid -->
 
             <div class="bgrid feature" data-aos="fade-up">
 
@@ -241,15 +248,15 @@
                         
                 </div>	               
 
-            </div> 
+            </div> <!-- /bgrid -->
 
-        </div> 
+        </div> <!-- end features-list -->
 
         <img data-aos="fade-up" src="assets/img/About/Schema_house.jpg" alt="shema showing water leak in a house">
 
-    </div>   
+    </div> <!-- end about-features -->  
     
-</section>   
+</section> <!-- end about -->  
 	<div id="video">
 	<div class="row">
 		<div class="embed-responsive">
@@ -257,12 +264,13 @@
 		</div>
 	</div>
 </div>
-	 
+	 <!-- download
+================================================== -->
 <section id="download">
 
     <div class="row">
         <div class="col-full">
-            <h1 class="intro-header" data-aos="fade-up">Sustainable and Eco-friendly</h1>
+            <h1 class="intro-header"  data-aos="fade-up">Sustainable and Eco-friendly</h1>
 
             <img src="assets/img/Ecology/world.svg" alt="world in hands" width="230px" data-aos="fade-up">
 
@@ -301,7 +309,7 @@
         </div>
     </div>
 
-</section>     
+</section> <!-- end download -->    
 	<section id="how">    
     <div class="row">
         
@@ -335,15 +343,15 @@
                 </div>  
 
             </div>           
-        </div> 
+        </div> <!-- end about-how-content -->
 
-    </div> 
+    </div> <!-- end about-how -->
 
 
     <div class="row how-bottom-image">
 
         <img src="assets/img/How/Gif_how.gif" alt="water leak detection" data-aos="fade-up">
-    </div>       
+    </div>  <!-- end about-bottom-image -->     
 </section>
 	<section id="partners">    
     <div class="row partners">
@@ -373,7 +381,8 @@
 		</div>
     </div>
 </section>
-	
+	<!-- Testimonials Section
+================================================== -->
 <section id="testimonials">
 
     <div class="row">
@@ -384,7 +393,7 @@
 
     <div class="row owl-wrap">
 
-        <div id="testimonial-slider" data-aos="fade-up">
+        <div id="testimonial-slider"  data-aos="fade-up">
 
             <div class="slides">
 
@@ -403,15 +412,16 @@
                     </div>                 
                 </div> 
 
-            </div> 
+            </div> <!-- end slides -->
 
-        </div>          
+        </div> <!-- end testimonial-slider -->         
         
-    </div> 
+    </div> <!-- end flex-container -->
 
-</section> 
+</section> <!-- end testimonials -->
 	
-	
+	<!-- footer
+================================================== -->
 <footer id="footer">
 
 	<div class="footer-main">
@@ -424,7 +434,7 @@
 				<p>
 				PROTECTONNECT is the first connected device that allow you to monitor your water meter and control any leakage in your water installations.
 				</p>
-			</div> 
+			</div> <!-- end footer-info -->
 
 			<div class="col-three md-1-3 tab-1-2 mob-full footer-contact">
 
@@ -438,7 +448,7 @@
 				France 
 				</p>                    
 
-			</div>   
+			</div> <!-- end footer-contact -->  
 
 			<div class="col-two md-1-3 tab-1-2 mob-full footer-site-links">
 
@@ -449,7 +459,7 @@
 					<li><a href="https://www.linkedin.com/company/protectonnect/" target="_blank"><i class="fa fa-linkedin"></i> Linkedin</a></li>
 				</ul>	      		
 						
-			</div>  
+			</div> <!-- end footer-site-links --> 
 
 			<div class="col-four md-1-2 tab-full footer-subscribe">
 
@@ -471,10 +481,10 @@
 
 				</div>	      		
 						
-			</div>          
+			</div> <!-- end footer-subscribe -->         
 
-		</div> 
-	</div> 
+		</div> <!-- /row -->
+	</div> <!-- end footer-main -->
 
 
 	<div class="footer-bottom">
@@ -492,7 +502,7 @@
 				</div>         
 		</div>
 
-	</div>      	
+	</div> <!-- end footer-bottom -->     	
 
 	</div>
 

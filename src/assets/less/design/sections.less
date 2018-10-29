@@ -10,9 +10,9 @@
 	}
 	@media only screen and (max-width: 900px) {
 		padding-top: 0;
-		margin-bottom: -100px;
+		margin-bottom: 300px;
 	}
-	img {
+	img:not(.ces-award) {
 		position: absolute;
 		left: 0;
 		top: 0;
@@ -22,6 +22,15 @@
 	}
 	&:hover img:first-child{
 		opacity: 1;
+	}
+	.ces-award{
+		position: absolute;
+		top: 10%;
+		left: 10%;
+		width: 75px;
+		@media only screen and (min-width: 1201px) {
+			width: auto;
+		}
 	}
 }
 
